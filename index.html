@@ -4042,15 +4042,15 @@
     return C.$ === S && (C.$ = Qt), e && C.jQuery === S && (C.jQuery = Yt), S;
   }, "undefined" == typeof e && (C.jQuery = C.$ = S), S;
 });</script><style>.retry {
-	display: none;
+    display: none;
 }
 
 p {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 
 input {
-	width: 300px;
+    width: 300px;
 }</style></head>
     <body>
         <marquee>🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬</marquee>
@@ -4058,7 +4058,7 @@ input {
         <h1>What Movie Should I Watch Tonight?</h1>
         <h2><em>A 100% valid, totally foolproof quiz</em></h2>
 
-        <marquee>🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬</marquee> 
+        <marquee>🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬⭐️🍿🎬</marquee>
 
         <hr>
 
@@ -4079,21 +4079,33 @@ input {
         <div class="answer"></div>
         <button class="retry">Try again</button>
     
-
 <script>
 /*__POPCODESTART__*/
+// Click handler for the "Tell me!" button
+// On click, hides the inputs and displays a personalized movie recommendation
 $(".pick-movie").click(function () {
+  // Store the values the user entered in local variables
   var name = $(".name").val();
-  console.log("name: " + name);
   var grade = $(".grade").val();
+  var favoriteActor = $(".favorite-actor").val(); // Log the user inputs to console for easier debugging
+
+  console.log("name: " + name);
   console.log("grade: " + grade);
-  var favoriteActor = $(".favorite-actor").val();
-  console.log("favorite actor: " + favoriteActor);
-  $(".questions").hide();
-  $(".answer").append("<h2>Hey " + name + ", you should watch 👩‍🎤 <a href='https://www.imdb.com/title/tt0236348/'>Josie and the Pussycats</a> 🎸tonight!</h2><h3>It won 🏆 " + grade + " Oscars 🏆, and it's " + favoriteActor + "'s favorite movie! 🤩</h3></h2>");
+  console.log("favorite actor: " + favoriteActor); // Hide the questions, inputs, and "Tell me!" button
+
+  $(".questions").hide(); // Build a personalized movie recommendation message from the values the user entered
+
+  var movieRecommendation = "<h2>Hey " + name + ", you should watch 👩‍🎤 <a href='https://www.imdb.com/title/tt0236348/'>Josie and the Pussycats</a> 🎸tonight!</h2><h3>It won 🏆 " + grade + " Oscars 🏆, and it's " + favoriteActor + "'s favorite movie! 🤩</h3></h2>"; // Add the movie recommendation to the page
+
+  $(".answer").append(movieRecommendation); // Show the "Try again" button
+
   $(".retry").show();
-});
+}); // Click handler for the "Try again" button
+// On click, reloads the page
+
 $(".retry").click(function () {
+  // Fancy JavaScript that reloads the page
+  // https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
   location.reload();
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbIiQiLCJjbGljayIsIm5hbWUiLCJ2YWwiLCJjb25zb2xlIiwibG9nIiwiZ3JhZGUiLCJmYXZvcml0ZUFjdG9yIiwiaGlkZSIsImFwcGVuZCIsInNob3ciLCJsb2NhdGlvbiIsInJlbG9hZCJdLCJtYXBwaW5ncyI6IkFBQUFBLENBQUMsQ0FBQyxhQUFELENBQUQsQ0FBaUJDLEtBQWpCLENBQXVCLFlBQVk7QUFDL0IsTUFBSUMsSUFBSSxHQUFHRixDQUFDLENBQUMsT0FBRCxDQUFELENBQVdHLEdBQVgsRUFBWDtBQUNBQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSxXQUFXSCxJQUF2QjtBQUVBLE1BQUlJLEtBQUssR0FBR04sQ0FBQyxDQUFDLFFBQUQsQ0FBRCxDQUFZRyxHQUFaLEVBQVo7QUFDQUMsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVksWUFBWUMsS0FBeEI7QUFFQSxNQUFJQyxhQUFhLEdBQUdQLENBQUMsQ0FBQyxpQkFBRCxDQUFELENBQXFCRyxHQUFyQixFQUFwQjtBQUNBQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSxxQkFBcUJFLGFBQWpDO0FBRUFQLEVBQUFBLENBQUMsQ0FBQyxZQUFELENBQUQsQ0FBZ0JRLElBQWhCO0FBRUFSLEVBQUFBLENBQUMsQ0FBQyxTQUFELENBQUQsQ0FBYVMsTUFBYixDQUFvQixhQUFhUCxJQUFiLEdBQW9CLG9JQUFwQixHQUEySkksS0FBM0osR0FBbUssdUJBQW5LLEdBQTZMQyxhQUE3TCxHQUE2TSxpQ0FBak87QUFFQVAsRUFBQUEsQ0FBQyxDQUFDLFFBQUQsQ0FBRCxDQUFZVSxJQUFaO0FBRUgsQ0FoQkQ7QUFrQkFWLENBQUMsQ0FBQyxRQUFELENBQUQsQ0FBWUMsS0FBWixDQUFrQixZQUFXO0FBQ3pCVSxFQUFBQSxRQUFRLENBQUNDLE1BQVQ7QUFDSCxDQUZEIiwic291cmNlc0NvbnRlbnQiOlsiJChcIi5waWNrLW1vdmllXCIpLmNsaWNrKGZ1bmN0aW9uICgpIHtcbiAgICBsZXQgbmFtZSA9ICQoXCIubmFtZVwiKS52YWwoKTtcbiAgICBjb25zb2xlLmxvZyhcIm5hbWU6IFwiICsgbmFtZSk7XG4gICAgXG4gICAgbGV0IGdyYWRlID0gJChcIi5ncmFkZVwiKS52YWwoKTtcbiAgICBjb25zb2xlLmxvZyhcImdyYWRlOiBcIiArIGdyYWRlKTtcbiAgICBcbiAgICBsZXQgZmF2b3JpdGVBY3RvciA9ICQoXCIuZmF2b3JpdGUtYWN0b3JcIikudmFsKCk7XG4gICAgY29uc29sZS5sb2coXCJmYXZvcml0ZSBhY3RvcjogXCIgKyBmYXZvcml0ZUFjdG9yKTtcbiAgIFxuICAgICQoXCIucXVlc3Rpb25zXCIpLmhpZGUoKTtcbiAgICBcbiAgICAkKFwiLmFuc3dlclwiKS5hcHBlbmQoXCI8aDI+SGV5IFwiICsgbmFtZSArIFwiLCB5b3Ugc2hvdWxkIHdhdGNoIPCfkanigI3wn46kIDxhIGhyZWY9J2h0dHBzOi8vd3d3LmltZGIuY29tL3RpdGxlL3R0MDIzNjM0OC8nPkpvc2llIGFuZCB0aGUgUHVzc3ljYXRzPC9hPiDwn464dG9uaWdodCE8L2gyPjxoMz5JdCB3b24g8J+PhiBcIiArIGdyYWRlICsgXCIgT3NjYXJzIPCfj4YsIGFuZCBpdCdzIFwiICsgZmF2b3JpdGVBY3RvciArIFwiJ3MgZmF2b3JpdGUgbW92aWUhIPCfpKk8L2gzPjwvaDI+XCIpO1xuICAgIFxuICAgICQoXCIucmV0cnlcIikuc2hvdygpO1xuICAgXG59KTtcblxuJChcIi5yZXRyeVwiKS5jbGljayhmdW5jdGlvbigpIHtcbiAgICBsb2NhdGlvbi5yZWxvYWQoKTtcbn0pOyJdfQ==</script></body></html>
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbIiQiLCJjbGljayIsIm5hbWUiLCJ2YWwiLCJncmFkZSIsImZhdm9yaXRlQWN0b3IiLCJjb25zb2xlIiwibG9nIiwiaGlkZSIsIm1vdmllUmVjb21tZW5kYXRpb24iLCJhcHBlbmQiLCJzaG93IiwibG9jYXRpb24iLCJyZWxvYWQiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQUEsQ0FBQyxDQUFDLGFBQUQsQ0FBRCxDQUFpQkMsS0FBakIsQ0FBdUIsWUFBVztBQUM5QjtBQUNBLE1BQUlDLElBQUksR0FBR0YsQ0FBQyxDQUFDLE9BQUQsQ0FBRCxDQUFXRyxHQUFYLEVBQVg7QUFDQSxNQUFJQyxLQUFLLEdBQUdKLENBQUMsQ0FBQyxRQUFELENBQUQsQ0FBWUcsR0FBWixFQUFaO0FBQ0EsTUFBSUUsYUFBYSxHQUFHTCxDQUFDLENBQUMsaUJBQUQsQ0FBRCxDQUFxQkcsR0FBckIsRUFBcEIsQ0FKOEIsQ0FNOUI7O0FBQ0FHLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFdBQVdMLElBQXZCO0FBQ0FJLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFlBQVlILEtBQXhCO0FBQ0FFLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLHFCQUFxQkYsYUFBakMsRUFUOEIsQ0FXOUI7O0FBQ0FMLEVBQUFBLENBQUMsQ0FBQyxZQUFELENBQUQsQ0FBZ0JRLElBQWhCLEdBWjhCLENBYzlCOztBQUNBLE1BQUlDLG1CQUFtQixHQUFHLGFBQWFQLElBQWIsR0FBb0Isb0lBQXBCLEdBQTJKRSxLQUEzSixHQUFtSyx1QkFBbkssR0FBNkxDLGFBQTdMLEdBQTZNLGlDQUF2TyxDQWY4QixDQWlCOUI7O0FBQ0FMLEVBQUFBLENBQUMsQ0FBQyxTQUFELENBQUQsQ0FBYVUsTUFBYixDQUFvQkQsbUJBQXBCLEVBbEI4QixDQW9COUI7O0FBQ0FULEVBQUFBLENBQUMsQ0FBQyxRQUFELENBQUQsQ0FBWVcsSUFBWjtBQUNILENBdEJELEUsQ0F3QkE7QUFDQTs7QUFDQVgsQ0FBQyxDQUFDLFFBQUQsQ0FBRCxDQUFZQyxLQUFaLENBQWtCLFlBQVc7QUFDekI7QUFDQTtBQUNBVyxFQUFBQSxRQUFRLENBQUNDLE1BQVQ7QUFDSCxDQUpEIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQ2xpY2sgaGFuZGxlciBmb3IgdGhlIFwiVGVsbCBtZSFcIiBidXR0b25cbi8vIE9uIGNsaWNrLCBoaWRlcyB0aGUgaW5wdXRzIGFuZCBkaXNwbGF5cyBhIHBlcnNvbmFsaXplZCBtb3ZpZSByZWNvbW1lbmRhdGlvblxuJChcIi5waWNrLW1vdmllXCIpLmNsaWNrKGZ1bmN0aW9uKCkge1xuICAgIC8vIFN0b3JlIHRoZSB2YWx1ZXMgdGhlIHVzZXIgZW50ZXJlZCBpbiBsb2NhbCB2YXJpYWJsZXNcbiAgICBsZXQgbmFtZSA9ICQoXCIubmFtZVwiKS52YWwoKTtcbiAgICBsZXQgZ3JhZGUgPSAkKFwiLmdyYWRlXCIpLnZhbCgpO1xuICAgIGxldCBmYXZvcml0ZUFjdG9yID0gJChcIi5mYXZvcml0ZS1hY3RvclwiKS52YWwoKTtcblxuICAgIC8vIExvZyB0aGUgdXNlciBpbnB1dHMgdG8gY29uc29sZSBmb3IgZWFzaWVyIGRlYnVnZ2luZ1xuICAgIGNvbnNvbGUubG9nKFwibmFtZTogXCIgKyBuYW1lKTtcbiAgICBjb25zb2xlLmxvZyhcImdyYWRlOiBcIiArIGdyYWRlKTtcbiAgICBjb25zb2xlLmxvZyhcImZhdm9yaXRlIGFjdG9yOiBcIiArIGZhdm9yaXRlQWN0b3IpO1xuXG4gICAgLy8gSGlkZSB0aGUgcXVlc3Rpb25zLCBpbnB1dHMsIGFuZCBcIlRlbGwgbWUhXCIgYnV0dG9uXG4gICAgJChcIi5xdWVzdGlvbnNcIikuaGlkZSgpO1xuXG4gICAgLy8gQnVpbGQgYSBwZXJzb25hbGl6ZWQgbW92aWUgcmVjb21tZW5kYXRpb24gbWVzc2FnZSBmcm9tIHRoZSB2YWx1ZXMgdGhlIHVzZXIgZW50ZXJlZFxuICAgIGxldCBtb3ZpZVJlY29tbWVuZGF0aW9uID0gXCI8aDI+SGV5IFwiICsgbmFtZSArIFwiLCB5b3Ugc2hvdWxkIHdhdGNoIPCfkanigI3wn46kIDxhIGhyZWY9J2h0dHBzOi8vd3d3LmltZGIuY29tL3RpdGxlL3R0MDIzNjM0OC8nPkpvc2llIGFuZCB0aGUgUHVzc3ljYXRzPC9hPiDwn464dG9uaWdodCE8L2gyPjxoMz5JdCB3b24g8J+PhiBcIiArIGdyYWRlICsgXCIgT3NjYXJzIPCfj4YsIGFuZCBpdCdzIFwiICsgZmF2b3JpdGVBY3RvciArIFwiJ3MgZmF2b3JpdGUgbW92aWUhIPCfpKk8L2gzPjwvaDI+XCI7XG5cbiAgICAvLyBBZGQgdGhlIG1vdmllIHJlY29tbWVuZGF0aW9uIHRvIHRoZSBwYWdlXG4gICAgJChcIi5hbnN3ZXJcIikuYXBwZW5kKG1vdmllUmVjb21tZW5kYXRpb24pO1xuXG4gICAgLy8gU2hvdyB0aGUgXCJUcnkgYWdhaW5cIiBidXR0b25cbiAgICAkKFwiLnJldHJ5XCIpLnNob3coKTtcbn0pO1xuXG4vLyBDbGljayBoYW5kbGVyIGZvciB0aGUgXCJUcnkgYWdhaW5cIiBidXR0b25cbi8vIE9uIGNsaWNrLCByZWxvYWRzIHRoZSBwYWdlXG4kKFwiLnJldHJ5XCIpLmNsaWNrKGZ1bmN0aW9uKCkge1xuICAgIC8vIEZhbmN5IEphdmFTY3JpcHQgdGhhdCByZWxvYWRzIHRoZSBwYWdlXG4gICAgLy8gaHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL0xvY2F0aW9uL3JlbG9hZFxuICAgIGxvY2F0aW9uLnJlbG9hZCgpO1xufSk7Il19</script></body></html>
